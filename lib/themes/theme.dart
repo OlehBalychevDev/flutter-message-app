@@ -1,38 +1,82 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_starter/themes/shadow.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const Color redLight = Color(0xFFE44125);
-const Color blackShade = Color(0xFF222222);
-const Color cherryRed = Color(0xffe8001d);
-const Color greyShadeLight = Color(0xFFE5E5E5);
-const Color greyLight = Color(0x0c000000);
+const Color background = Color(0xFFF5F5F5);
+const Color dark = Color(0xFF363A44);
+const Color dark65 = Color.fromRGBO(54, 58, 68, 0.65);
+const Color dark40 = Color.fromRGBO(54, 58, 68, 0.40);
+const Color black65 = Color.fromRGBO(0, 0, 0, 0.65);
+const Color black50 = Color.fromRGBO(0, 0, 0, 0.5);
+const Color black25 = Color.fromRGBO(0, 0, 0, 0.25);
 
-ThemeData darkTheme = ThemeData(
-  primaryColor: Colors.black,
-  backgroundColor: blackShade,
-  colorScheme: ColorScheme.dark(primary: Colors.grey.shade200),
-  floatingActionButtonTheme: const FloatingActionButtonThemeData(foregroundColor: Colors.black),
-  dividerColor: Colors.black12,
-  // or use string of the font in the assets 'SFUIDisplay'
-  fontFamily: GoogleFonts.roboto().fontFamily,
-  textTheme: const TextTheme(
-    headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-    headline6: TextStyle(fontSize: 22.0, fontStyle: FontStyle.italic),
-    bodyText2: TextStyle(fontSize: 14.0),
-  ),
-);
+const Color white = Color(0xFFFFFFFF);
+const Color white65 = Color.fromRGBO(256, 256, 256, 0.65);
 
 ThemeData lightTheme = ThemeData(
   primaryColor: Colors.white,
-  backgroundColor: greyShadeLight,
-  colorScheme: const ColorScheme.light(primary: Colors.black54),
-  floatingActionButtonTheme: const FloatingActionButtonThemeData(foregroundColor: Colors.white),
-  dividerColor: Colors.white54,
-  // or use string of the font in the assets 'SFUIDisplay'
-  fontFamily: GoogleFonts.roboto().fontFamily,
+  backgroundColor: background,
+  colorScheme: const ColorScheme.light(primary: dark),
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      foregroundColor: Colors.white, backgroundColor: dark),
+  appBarTheme: const AppBarTheme(
+      elevation: 0,
+      titleTextStyle: TextStyle(
+          fontWeight: FontWeight.w500,
+          fontSize: 18,
+          height: 20 / 18,
+          color: white),
+      foregroundColor: white,
+      backgroundColor: dark),
+  cardTheme: CardTheme(
+    color: white,
+    elevation: 0,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(2.0),
+    ),
+  ),
   textTheme: const TextTheme(
-    headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-    headline6: TextStyle(fontSize: 22.0, fontStyle: FontStyle.italic),
-    bodyText2: TextStyle(fontSize: 14.0),
+    caption: TextStyle(
+        fontFamily: 'Gilroy',
+        fontWeight: FontWeight.w300,
+        fontSize: 30,
+        height: 35 / 30,
+        color: white,
+        shadows: [bottomTextShadow]),
+    overline: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 14,
+        height: 20 / 14,
+        color: white65,
+        shadows: [bottomTextShadow]),
+    subtitle1: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 18,
+        height: 20 / 18,
+        color: white),
+
+    /// Character on avatar circle
+    subtitle2: TextStyle(),
+    /// username on card widget
+    headline1: TextStyle(),
+    /// last message on card widget
+    headline2: TextStyle(),
+    /// time on card and message widgets
+    headline3: TextStyle(),
+    /// hint text in input fields
+    headline4: TextStyle(),
+    /// date on message screen
+    headline5: TextStyle(),
+    /// text on icon with text buttons on message screen
+    headline6: TextStyle(),
+    /// text on message widget
+    bodyText1: TextStyle(),
+    /// text on text field widgets
+    bodyText2: TextStyle()
+
+
   ),
 );
+
+ThemeData darkTheme = lightTheme.copyWith();

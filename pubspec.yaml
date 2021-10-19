@@ -66,3 +66,8 @@ flutter:
           weight: 800
         - asset: assets/fonts/SFUIDisplay/SFUIDisplay-Black.ttf
           weight: 900
+
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy/Gilroy-Light.ttf
+          weight: 300

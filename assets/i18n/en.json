@@ -1,4 +1,7 @@
 {
+  "app": {
+    "title": "Messenger"
+  },
   "test_page": {
     "title": "Main page"
   }
