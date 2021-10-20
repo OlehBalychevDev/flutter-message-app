@@ -12,7 +12,14 @@ const Color black50 = Color.fromRGBO(0, 0, 0, 0.5);
 const Color black25 = Color.fromRGBO(0, 0, 0, 0.25);
 
 const Color white = Color(0xFFFFFFFF);
-const Color white65 = Color.fromRGBO(256, 256, 256, 0.65);
+const Color white65 = Color.fromRGBO(255, 255, 255, 0.65);
+
+extension ThemExt on BuildContext {
+
+  TextTheme get textTheme => Theme.of(this).textTheme;
+  ThemeData get theme => Theme.of(this);
+
+}
 
 ThemeData lightTheme = ThemeData(
   primaryColor: Colors.white,

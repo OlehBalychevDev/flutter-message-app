@@ -20,7 +20,9 @@ class _ApplicationState extends State<Application> {
       state: LocalizationProvider.of(context).state,
       child: MultiProvider(
           providers: [
-
+            ChangeNotifierProvider(
+              create: (_) => ThemeProvider(),
+            )
           ],
           child: Consumer<ThemeProvider>(builder: (context, themeProvider, _) {
             return MaterialApp(
